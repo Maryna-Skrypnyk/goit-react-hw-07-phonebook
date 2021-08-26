@@ -14,12 +14,3 @@ export function addContact(contact) {
 export function deleteContact(contactId) {
   return axios.delete(`/contacts/${contactId}`);
 }
-
-// export function updateContact(contactId, update) {
-//     return axios.patch(`/contacts/${contactId}`, update).then(({ data }) => data);
-// }
-
-// export async function fetchContactsById(contactId) {
-//     const { data } = await axios.get(`/contacts/${contactId}`);
-//     return data;
-// }

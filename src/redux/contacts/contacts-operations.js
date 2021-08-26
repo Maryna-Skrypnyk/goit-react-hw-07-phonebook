@@ -1,4 +1,3 @@
-// import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 // import * as contactsAPI from '../../services/contacts-api';
 import {
@@ -26,13 +25,15 @@ export const fetchContacts = () => async dispatch => {
   }
 };
 
-// export const fetchContacts = () => dispatch => {
+// export const fetchContacts = () => async dispatch => {
 //   dispatch(fetchContactsRequest());
 
-//   axios
-//     .get('/contacts')
-//     .then(({ data }) => dispatch(fetchContactsSuccess(data)))
-//     .catch(error => dispatch(fetchContactsError(error)));
+//   try {
+//     const contacts = await contactsAPI.fetchContacts();
+//     dispatch(fetchContactsSuccess(contacts));
+//   } catch (error) {
+//     dispatch(fetchContactsError(error));
+//   }
 // };
 
 export const addContact = (name, number) => dispatch => {
@@ -57,9 +58,3 @@ export const deleteContact = contactId => dispatch => {
     .then(() => dispatch(deleteContactSuccess(contactId)))
     .catch(error => dispatch(deleteContactError(error)));
 };
-
-// with toolkit
-// export const fetchContacts = createAsyncThunk('contacts/fetchContacts', async () => {
-//     const { data } = await axios.get(`/contacts`)
-//     return data
-// })
