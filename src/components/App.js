@@ -1,8 +1,8 @@
 import React from 'react';
-import Layout from '../components/Layout';
-import ContactForm from '../components/ContactForm';
-import Filter from '../components/Filter';
-import ContactList from '../components/ContactList';
+import Layout from 'components/Layout';
+import ContactForm from 'components/ContactForm';
+import Filter from 'components/Filter';
+import ContactList from 'components/ContactList';
 
 import './App.module.scss';
 

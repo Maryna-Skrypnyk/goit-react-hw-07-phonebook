@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { getVisibleContactsSortByName } from '../../redux/contacts/contacts-selectors';
-import { addContact } from '../../redux/contacts/contacts-actions';
+import { contactsSelectors, contactsOperations } from 'redux/contacts';
 import shortid from 'shortid';
 
 import styles from './ContactForm.module.scss';
@@ -9,7 +8,7 @@ import styles from './ContactForm.module.scss';
 function ContactForm() {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
-  const contacts = useSelector(getVisibleContactsSortByName);
+  const contacts = useSelector(contactsSelectors.getVisibleContactsSortByName);
   const dispatch = useDispatch();
 
   const nameInputId = shortid.generate();
@@ -68,7 +67,7 @@ function ContactForm() {
       return;
     }
 
-    dispatch(addContact(name, number));
+    dispatch(contactsOperations.addContact(name, number));
     reset();
   };
 
