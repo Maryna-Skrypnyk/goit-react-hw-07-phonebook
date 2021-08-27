@@ -36,22 +36,25 @@ const ContactList = () => {
 
   const onDeleteContact = id => dispatch(contactsOperations.deleteContact(id));
 
-  if (contacts.length === 0) {
-    return <p>There are no contacts in the list</p>;
-  }
+  // if (contacts.length === 0) {
+  //   return <p>There are no contacts in the list</p>;
+  // }
 
   return (
-    <ul className={styles.ContactList}>
-      {contacts.map(({ id, name, number }) => (
-        <ContactItem
-          key={id}
-          name={name}
-          number={number}
-          onDeleteContact={() => onDeleteContact(id)}
-        />
-      ))}
+    <>
       {isLoading && <h1>Loading...</h1>}
-    </ul>
+      {contacts.length === 0 && <p>There are no contacts in the list</p>}
+      <ul className={styles.ContactList}>
+        {contacts.map(({ id, name, number }) => (
+          <ContactItem
+            key={id}
+            name={name}
+            number={number}
+            onDeleteContact={() => onDeleteContact(id)}
+          />
+        ))}
+      </ul>
+    </>
   );
 };
 
