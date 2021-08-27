@@ -34,11 +34,6 @@ function ContactForm() {
   const handleSubmit = e => {
     e.preventDefault();
 
-    // const { name, number } = e.target;
-    // const {
-    //   target: { name, number },
-    // } = e;
-
     if (contacts.find(contact => contact.name === e.target.name.value)) {
       alert(`${e.target.name.value} is already in contacts`);
       return;

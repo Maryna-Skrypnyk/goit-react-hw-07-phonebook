@@ -25,17 +25,6 @@ export const fetchContacts = () => async dispatch => {
   }
 };
 
-// export const fetchContacts = () => async dispatch => {
-//   dispatch(fetchContactsRequest());
-
-//   try {
-//     const contacts = await contactsAPI.fetchContacts();
-//     dispatch(fetchContactsSuccess(contacts));
-//   } catch (error) {
-//     dispatch(fetchContactsError(error));
-//   }
-// };
-
 export const addContact = (name, number) => async dispatch => {
   const contact = {
     name,
@@ -60,3 +49,14 @@ export const deleteContact = contactId => dispatch => {
     .then(() => dispatch(deleteContactSuccess(contactId)))
     .catch(error => dispatch(deleteContactError(error)));
 };
+
+// export const fetchContacts = () => async dispatch => {
+//   dispatch(fetchContactsRequest());
+
+//   try {
+//     const contacts = await contactsAPI.fetchContacts();
+//     dispatch(fetchContactsSuccess(contacts));
+//   } catch (error) {
+//     dispatch(fetchContactsError(error));
+//   }
+// };
