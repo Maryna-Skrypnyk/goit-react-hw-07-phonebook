@@ -1,6 +1,10 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { contactsOperations, contactsSelectors } from 'redux/contacts';
+// import {
+//   fetchContacts,
+//   deleteContact,
+// } from '../../redux/slices/contacts-slice';
 import PropTypes from 'prop-types';
 
 import IconButton from '../IconButton';

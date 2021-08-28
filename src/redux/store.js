@@ -9,6 +9,7 @@ import {
 } from 'redux-persist';
 import logger from 'redux-logger';
 import contactsReducer from './contacts/contacts-reducer';
+// import { contactsReducerWithSlice } from '../redux/slices/contacts-slice';
 
 const middleware = [
   ...getDefaultMiddleware({
