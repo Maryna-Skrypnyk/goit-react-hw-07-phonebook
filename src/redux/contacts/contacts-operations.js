@@ -1,5 +1,5 @@
 import axios from 'axios';
-// import * as contactsAPI from '../../services/contacts-api';
+// import * as contactsAPI from './contacts-api';
 import {
   fetchContactsRequest,
   fetchContactsSuccess,
